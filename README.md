@@ -1,4 +1,8 @@
 # [Moovies Explorer] backend
+
+`https://api.movies-whoyouvies.nomoredomains.club`
+
+* Hosting: Yandex Cloud.
 * Server: Express.
 * Database: Mongo.
 * Testing: Jest & Supertest.
