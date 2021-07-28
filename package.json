@@ -1,0 +1,22 @@
+{
+  "name": "movie-whoyouvie-api",
+  "version": "1.0.0",
+  "description": "YP Diploma",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "jest",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimir-mikhailov/movies-explorer-api.git"
+  },
+  "author": "Vladimir Mikhailov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimir-mikhailov/movies-explorer-api/issues"
+  },
+  "homepage": "https://api.movies-whoyouvies.nomoredomains.club"
+}
