@@ -2,12 +2,14 @@ const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { errors: celebrateErrors } = require('celebrate');
-const router = require('./routes/routes'); // todo переписать на routes/index.js?
-const cors = require('./middlewares/cors');
-const requestLogger = require('./middlewares/requestLogger');
-const errorLogger = require("./middlewares/errorLogger");
-const rateLimiter = require("./middlewares/rateLimiter");
-const { errorHandler } = require('./middlewares/errorHandler');
+const router = require('./routes');
+const {
+  rateLimiter,
+  cors,
+  requestLogger,
+  errorLogger,
+  errorHandler,
+} = require('./middlewares');
 
 const app = express();
 
