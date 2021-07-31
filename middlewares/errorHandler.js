@@ -1,6 +1,6 @@
 const { isCelebrateError } = require('celebrate');
 
-module.exports.errorHandler = (err, req, res, next) => {
+module.exports = (err, req, res, next) => {
   if (isCelebrateError(err)) {
     res.status(400).send({ message: 'Переданы некорректные данные.' });
     return;

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const UnauthorizedError = require('../errors/401');
+const UnauthorizedError = require('../../../utils/errors/401');
 
 const { JWT_SECRET = 'dev-secret' } = process.env;
 
