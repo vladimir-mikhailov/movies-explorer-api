@@ -4,8 +4,8 @@ module.exports = celebrate({
   body: Joi.object().keys({
     nameRU: Joi.string().required().min(1).max(200),
     nameEN: Joi.string().required().min(1).max(200),
-    movieId: Joi.string().required(),
-    year: Joi.number().required().min(4).max(4),
+    movieId: Joi.number().integer().positive().required(),
+    year: Joi.number().integer().required().min(4).max(4),
     duration: Joi.number().required().min(1),
     description: Joi.string().required().min(1).max(2000),
     director: Joi.string().required().min(1).max(200),
