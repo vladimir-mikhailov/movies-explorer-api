@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 require('dotenv').config();
 const app = require('./app');
 const dbConnect = require('./utils/dbConnect');

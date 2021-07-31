@@ -3,13 +3,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { errors: celebrateErrors } = require('celebrate');
 const router = require('./routes');
-const {
-  rateLimiter,
-  cors,
-  requestLogger,
-  errorLogger,
-  errorHandler,
-} = require('./middlewares');
+const { rateLimiter, cors, requestLogger, errorLogger, errorHandler } = require('./middlewares');
 
 const app = express();
 

@@ -9,11 +9,6 @@ const userSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 30,
     default: 'Киноман Василий',
-    // validate: {
-    //   validator(v) {
-    //     return /^[a-zа-яё0-9\-' ]+$/i.test(v);
-    //   },
-    // },
   },
   email: {
     type: String,
