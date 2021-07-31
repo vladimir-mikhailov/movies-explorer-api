@@ -2,27 +2,13 @@ const mongoose = require('mongoose');
 const { isURL } = require('validator');
 
 const movieSchema = new mongoose.Schema({
-  nameRu: {
+  nameRU: {
     type: String,
     required: true,
-    // minlength: 2,
-    // maxlength: 30,
-    // validate: {
-    //   validator(v) {
-    //     return /^[a-zа-яё0-9.,\-–'! ]+$/i.test(v);
-    //   },
-    // },
   },
-  nameEn: {
+  nameEN: {
     type: String,
     required: true,
-    // minlength: 2,
-    // maxlength: 30,
-    // validate: {
-    //   validator(v) {
-    //     return /^[a-zа-яё0-9.,\-–'! ]+$/i.test(v);
-    //   },
-    // },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
