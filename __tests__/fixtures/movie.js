@@ -9,7 +9,7 @@ module.exports = {
   trailer: 'https://youtu.be/KUAIFBhJaW4',
   thumbnail:
     'https://mir-s3-cdn-cf.behance.net/project_modules/fs/ef4b1458774599.5a09834451b57.png',
-  movieId: '123451456134651324651456',
+  movieId: '1234',
   nameRU: 'Супер Фильм часть 1',
   nameEN: 'Super Movie part 1',
 };
