@@ -5,7 +5,7 @@ module.exports = celebrate({
     nameRU: Joi.string().required().min(1).max(200),
     nameEN: Joi.string().required().min(1).max(200),
     movieId: Joi.number().integer().positive().required(),
-    year: Joi.number().integer().required().min(4).max(4),
+    year: Joi.string().required().min(4).max(4),
     duration: Joi.number().required().min(1),
     description: Joi.string().required().min(1).max(2000),
     director: Joi.string().required().min(1).max(200),
