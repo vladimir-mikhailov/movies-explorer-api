@@ -4,7 +4,7 @@ const {
   invalidThumbnailMessage,
   invalidImageMessage,
   invalidTrailerMessage,
-} = require('../../../utils/responseMessages');
+} = require('../messages/moviesResponseMessages');
 
 const movieSchema = new mongoose.Schema({
   nameRU: {

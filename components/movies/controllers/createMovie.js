@@ -1,6 +1,6 @@
 const Movie = require('../models/movie');
 const ConflictError = require('../../../utils/errors/409');
-const { movieIsAlreadyExistMessage } = require('../../../utils/responseMessages');
+const { movieIsAlreadyExistMessage } = require('../messages/moviesResponseMessages');
 
 const createMovie = async (req, res) => {
   const {

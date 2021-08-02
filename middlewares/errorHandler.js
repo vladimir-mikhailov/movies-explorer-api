@@ -1,17 +1,16 @@
 const { isCelebrateError } = require('celebrate');
 const {
-  invalidRequestDataMessage,
   userAlreadyRegisteredMessage,
-  serverErrorMessage,
-} = require('../utils/responseMessages');
+} = require('../components/users/messages/usersResponseMessages');
+const { requestValidationErrorMessage, serverErrorMessage } = require('../utils/responseMessages');
 
 module.exports = (err, req, res, next) => {
   if (isCelebrateError(err)) {
-    res.status(400).send({ message: invalidRequestDataMessage });
+    res.status(400).send({ message: requestValidationErrorMessage });
     return;
   }
   if (err.name === ('CastError' || 'ValidationError')) {
-    res.status(400).send({ message: invalidRequestDataMessage });
+    res.status(400).send({ message: requestValidationErrorMessage });
     return;
   }
   if (err.name === 'MongoError' && err.code === 11000) {

@@ -1,6 +1,6 @@
-const { PORT, MONGO_URI } = require('./utils/envConfig');
+const { PORT, MONGO_URI } = require('./utils/config/envConfig');
 const app = require('./app');
-const dbConnect = require('./utils/dbConnect');
+const dbConnect = require('./utils/database/dbConnect');
 const { appStartFailedMessage } = require('./utils/responseMessages');
 
 const start = async () => {

@@ -4,7 +4,7 @@ const ConflictError = require('../../../utils/errors/409');
 const {
   userNotFoundMessage,
   userTriedToUpdateAnotherProfileMessage,
-} = require('../../../utils/responseMessages');
+} = require('../messages/usersResponseMessages');
 
 const throwNotFoundError = () => {
   throw new NotFoundError(userNotFoundMessage);

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
-const auth = require('../components/users/middlewares/auth');
+const auth = require('../components/users/middlewares/auth/auth');
 const {
   validateLoginReq,
   validateRegisterReq,

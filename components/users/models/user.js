@@ -5,7 +5,7 @@ const UnauthorizedError = require('../../../utils/errors/401');
 const {
   invalidEmailMessage,
   wrongEmailOrPasswordMessage,
-} = require('../../../utils/responseMessages');
+} = require('../messages/usersResponseMessages');
 
 const userSchema = new mongoose.Schema({
   name: {
