@@ -1,9 +1,13 @@
 const User = require('../models/user');
 const NotFoundError = require('../../../utils/errors/404');
 const ConflictError = require('../../../utils/errors/409');
+const {
+  userNotFoundMessage,
+  userTriedToUpdateAnotherProfileMessage,
+} = require('../../../utils/responseMessages');
 
 const throwNotFoundError = () => {
-  throw new NotFoundError('Пользователя с таким id в базе нет.');
+  throw new NotFoundError(userNotFoundMessage);
 };
 
 module.exports = async (req, res) => {
@@ -15,7 +19,7 @@ module.exports = async (req, res) => {
 
   const userId = String(user._id);
 
-  if (userId !== req.user._id) throw new ConflictError('Не трожь чужой профиль!');
+  if (userId !== req.user._id) throw new ConflictError(userTriedToUpdateAnotherProfileMessage);
 
   const updatedUser = await User.findByIdAndUpdate(
     req.user._id,

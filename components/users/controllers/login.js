@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const { loginSuccessfulMessage } = require('../../../utils/responseMessages');
 
 const { JWT_SECRET = 'dev-secret' } = process.env;
 
@@ -18,5 +19,5 @@ module.exports = async (req, res) => {
 
   const token = jwt.sign({ _id: user._id }, JWT_SECRET, tokenOptions);
 
-  res.cookie('jwt', token, cookieOptions).send({ message: 'Успешный логин' });
+  res.cookie('jwt', token, cookieOptions).send({ message: loginSuccessfulMessage });
 };

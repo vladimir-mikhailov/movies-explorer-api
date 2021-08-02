@@ -4,7 +4,6 @@ const DailyRotateFile = require('winston-daily-rotate-file');
 
 const requestLogger = expressWinston.logger({
   transports: [
-    // new winston.transports.File({ filename: './logs/request.log' }),
     new DailyRotateFile({
       filename: './logs/request-%DATE%.log',
       datePattern: 'YYYY-MM-DD',

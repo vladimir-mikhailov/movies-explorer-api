@@ -1,6 +1,11 @@
 const Movie = require('../models/movie');
 const NotFoundError = require('../../../utils/errors/404');
 const ForbiddenError = require('../../../utils/errors/403');
+const { movieBelongsToAnotherUserMessage } = require('../../../utils/responseMessages');
+const {
+  movieNotFoundMessage,
+  movieDeletedSuccessfullyMessage,
+} = require('../../../utils/responseMessages');
 
 const deleteMovie = async (req, res) => {
   const { movieId } = req.params;
@@ -8,15 +13,15 @@ const deleteMovie = async (req, res) => {
 
   const movie = await Movie.findOne({ _id: movieId });
 
-  if (!movie) throw new NotFoundError('Фильма с таким id в базе нет.');
+  if (!movie) throw new NotFoundError(movieNotFoundMessage);
 
   const ownerId = String(movie.owner._id);
 
-  if (ownerId !== userId) throw new ForbiddenError('Руки прочь от чужого фильма!');
+  if (ownerId !== userId) throw new ForbiddenError(movieBelongsToAnotherUserMessage);
 
   await Movie.findByIdAndRemove(movie._id);
 
-  res.status(200).send({ message: 'Фильм удалён.' });
+  res.status(200).send({ message: movieDeletedSuccessfullyMessage });
 };
 
 module.exports = deleteMovie;

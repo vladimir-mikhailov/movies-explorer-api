@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 
-
-
 let cached = global.mongoose;
 
 if (!cached) {
-  // eslint-disable-next-line no-multi-assign
-  cached = global.mongoose = { conn: null, promise: null };
+  cached = { conn: null, promise: null };
+  global.mongoose = cached;
 }
 
 async function dbConnect(mongoUri) {
@@ -15,7 +13,7 @@ async function dbConnect(mongoUri) {
   }
 
   if (!cached.promise) {
-    const opts = {
+    const mongoOptions = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       bufferCommands: false,
@@ -24,7 +22,7 @@ async function dbConnect(mongoUri) {
       useCreateIndex: true,
     };
 
-    cached.promise = mongoose.connect(mongoUri, opts).then((mongo) => mongo);
+    cached.promise = await mongoose.connect(mongoUri, mongoOptions).then((mongo) => mongo);
   }
   cached.conn = await cached.promise;
   return cached.conn;

@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 const { isURL } = require('validator');
+const {
+  invalidThumbnailMessage,
+  invalidImageMessage,
+  invalidTrailerMessage,
+} = require('../../../utils/responseMessages');
 
 const movieSchema = new mongoose.Schema({
   nameRU: {
@@ -22,7 +27,7 @@ const movieSchema = new mongoose.Schema({
       validator(v) {
         return isURL(v);
       },
-      message: 'Некорректная ссылка на миниатюру постера к фильму',
+      message: invalidThumbnailMessage,
     },
   },
   image: {
@@ -32,7 +37,7 @@ const movieSchema = new mongoose.Schema({
       validator(v) {
         return isURL(v);
       },
-      message: 'Некорректная ссылка на постер к фильму',
+      message: invalidImageMessage,
     },
   },
   trailer: {
@@ -42,7 +47,7 @@ const movieSchema = new mongoose.Schema({
       validator(v) {
         return isURL(v);
       },
-      message: 'Некорректная ссылка на трейлер к фильму',
+      message: invalidTrailerMessage,
     },
   },
   movieId: {

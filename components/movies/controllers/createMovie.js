@@ -1,5 +1,6 @@
 const Movie = require('../models/movie');
 const ConflictError = require('../../../utils/errors/409');
+const { movieIsAlreadyExistMessage } = require('../../../utils/responseMessages');
 
 const createMovie = async (req, res) => {
   const {
@@ -18,7 +19,7 @@ const createMovie = async (req, res) => {
 
   const movieFound = await Movie.findOne({ owner: req.user._id, movieId });
 
-  if (movieFound && movieFound.movieId) throw new ConflictError('Этот фильм уже сохранён у пользователя');
+  if (movieFound && movieFound.movieId) throw new ConflictError(movieIsAlreadyExistMessage);
 
   const movie = await Movie.create({
     country,

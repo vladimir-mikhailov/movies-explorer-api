@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 const UnauthorizedError = require('../../../utils/errors/401');
-
-const { JWT_SECRET = 'dev-secret' } = process.env;
+const { unauthorizedErrorMessage } = require('../../../utils/responseMessages');
+const { JWT_SECRET } = require('../../../utils/envConfig');
 
 const handleAuthError = () => {
-  throw new UnauthorizedError('Ошибка авторизации');
+  throw new UnauthorizedError(unauthorizedErrorMessage);
 };
 
 module.exports = (req, res, next) => {
