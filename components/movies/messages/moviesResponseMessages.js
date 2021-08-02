@@ -5,5 +5,5 @@ module.exports = {
   movieDeletedSuccessfullyMessage: 'Фильм удалён.',
   invalidThumbnailMessage: 'Некорректная ссылка на миниатюру постера к фильму.',
   invalidImageMessage: 'Некорректная ссылка на постер к фильму.',
-  invalidTrailerMessage:'Некорректная ссылка на трейлер к фильму.',
+  invalidTrailerMessage: 'Некорректная ссылка на трейлер к фильму.',
 };
