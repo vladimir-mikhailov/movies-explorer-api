@@ -9,14 +9,14 @@ const {
 
 const app = express();
 
+app.use(requestLogger);
+
 app.use(rateLimiter);
 app.use(helmet());
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(requestLogger);
 
 app.use(cors);
 
