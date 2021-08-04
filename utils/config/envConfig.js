@@ -14,4 +14,6 @@ const {
   JWT_SECRET = NODE_ENV !== 'production' && devConfig.JWTSecret,
 } = process.env;
 
-module.exports = { NODE_ENV, PORT, MONGO_URI, JWT_SECRET };
+module.exports = {
+  NODE_ENV, PORT, MONGO_URI, JWT_SECRET,
+};

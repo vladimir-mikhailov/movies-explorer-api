@@ -40,17 +40,15 @@ describe('Database tests', () => {
     await User.deleteOne({ _id: userId });
   });
 
-  it('createUser: Пользователь должен быть', () =>
-    User.findOne({ email: fixtures.user.email }).then((user) => {
-      expect(user).toBeDefined();
-      expect(user.email).toBe(fixtures.user.email);
-      expect(user.name).toBe(fixtures.user.name);
-    }));
+  it('createUser: Пользователь должен быть', () => User.findOne({ email: fixtures.user.email }).then((user) => {
+    expect(user).toBeDefined();
+    expect(user.email).toBe(fixtures.user.email);
+    expect(user.name).toBe(fixtures.user.name);
+  }));
 
-  it('createMovie: Фильм должен быть', () =>
-    Movie.findOne({ _id: movieId }).then((movie) => {
-      expect(movie).toBeDefined();
-      expect(movie.movieId).toBe(fixtures.movie.movieId);
-      expect(movie.nameRu).toBe(fixtures.movie.nameRu);
-    }));
+  it('createMovie: Фильм должен быть', () => Movie.findOne({ _id: movieId }).then((movie) => {
+    expect(movie).toBeDefined();
+    expect(movie.movieId).toBe(fixtures.movie.movieId);
+    expect(movie.nameRu).toBe(fixtures.movie.nameRu);
+  }));
 });
