@@ -20,6 +20,6 @@ router.use('/users', auth, usersRoutes);
 
 router.use('/movies', auth, moviesRoutes);
 
-router.use(notFoundHandler);
+router.use(auth, notFoundHandler);
 
 module.exports = router;
