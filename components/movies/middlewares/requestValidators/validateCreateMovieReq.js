@@ -1,4 +1,10 @@
 const { celebrate, Joi } = require('celebrate');
+const { isURL } = require('validator');
+const {
+  invalidImageMessage,
+  invalidTrailerMessage,
+  invalidThumbnailMessage,
+} = require('../../messages/moviesResponseMessages');
 
 module.exports = celebrate({
   body: Joi.object().keys({
@@ -12,21 +18,27 @@ module.exports = celebrate({
     country: Joi.string().required().min(1).max(100),
     image: Joi.string()
       .required()
-      .uri({
-        scheme: /https?/,
-        allowQuerySquareBrackets: true,
+      .custom((value, helpers) => {
+        if (isURL(value)) {
+          return value;
+        }
+        return helpers.message(invalidImageMessage);
       }),
     trailer: Joi.string()
       .required()
-      .uri({
-        scheme: /https?/,
-        allowQuerySquareBrackets: true,
+      .custom((value, helpers) => {
+        if (isURL(value)) {
+          return value;
+        }
+        return helpers.message(invalidTrailerMessage);
       }),
     thumbnail: Joi.string()
       .required()
-      .uri({
-        scheme: /https?/,
-        allowQuerySquareBrackets: true,
+      .custom((value, helpers) => {
+        if (isURL(value)) {
+          return value;
+        }
+        return helpers.message(invalidThumbnailMessage);
       }),
   }),
 });
