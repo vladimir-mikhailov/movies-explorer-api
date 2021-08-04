@@ -4,7 +4,7 @@ const {
   invalidImageMessage,
   invalidTrailerMessage,
   invalidThumbnailMessage,
-} = require('../../messages/moviesResponseMessages');
+} = require('../../../utils/messages/moviesResponseMessages');
 
 module.exports = celebrate({
   body: Joi.object().keys({

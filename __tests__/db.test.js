@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const User = require('../components/users/models/user');
-const Movie = require('../components/movies/models/movie');
+const User = require('../models/user');
+const Movie = require('../models/movie');
 const fixtures = require('./fixtures');
 
 const MONGO_URL = 'mongodb://localhost:27017/moviedb-test';

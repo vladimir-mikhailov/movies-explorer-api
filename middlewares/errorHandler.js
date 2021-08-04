@@ -1,8 +1,8 @@
 const { isCelebrateError } = require('celebrate');
 const {
   userAlreadyRegisteredMessage,
-} = require('../components/users/messages/usersResponseMessages');
-const { requestValidationErrorMessage, serverErrorMessage } = require('../utils/responseMessages');
+} = require('../utils/messages/usersResponseMessages');
+const { requestValidationErrorMessage, serverErrorMessage } = require('../utils/messages/responseMessages');
 
 module.exports = (err, req, res, next) => {
   if (isCelebrateError(err)) {

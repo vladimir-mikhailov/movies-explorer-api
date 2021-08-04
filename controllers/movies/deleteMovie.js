@@ -1,11 +1,11 @@
-const Movie = require('../models/movie');
-const NotFoundError = require('../../../utils/errors/404');
-const ForbiddenError = require('../../../utils/errors/403');
+const Movie = require('../../models/movie');
+const NotFoundError = require('../../utils/errors/404');
+const ForbiddenError = require('../../utils/errors/403');
 const {
   movieNotFoundMessage,
   movieDeletedSuccessfullyMessage,
   movieBelongsToAnotherUserMessage,
-} = require('../messages/moviesResponseMessages');
+} = require('../../utils/messages/moviesResponseMessages');
 
 const deleteMovie = async (req, res) => {
   const { movieId } = req.params;

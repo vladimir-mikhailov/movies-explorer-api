@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
-const { loginSuccessfulMessage } = require('../messages/usersResponseMessages');
+const User = require('../../models/user');
+const { loginSuccessfulMessage } = require('../../utils/messages/usersResponseMessages');
 
 const { JWT_SECRET = 'dev-secret' } = process.env;
 

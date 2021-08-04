@@ -1,10 +1,10 @@
-const User = require('../models/user');
-const NotFoundError = require('../../../utils/errors/404');
-const ConflictError = require('../../../utils/errors/409');
+const User = require('../../models/user');
+const NotFoundError = require('../../utils/errors/404');
+const ConflictError = require('../../utils/errors/409');
 const {
   userNotFoundMessage,
   userTriedToUpdateAnotherProfileMessage,
-} = require('../messages/usersResponseMessages');
+} = require('../../utils/messages/usersResponseMessages');
 
 const throwNotFoundError = () => {
   throw new NotFoundError(userNotFoundMessage);

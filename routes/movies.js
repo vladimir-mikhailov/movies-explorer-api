@@ -4,8 +4,8 @@ const {
   validateCreateMovieReq,
   validateMovieIdParam,
   validateUserId,
-} = require('../middlewares/requestValidators');
-const { createMovie, getMovies, deleteMovie } = require('../controllers');
+} = require('../middlewares/movies/requestValidators');
+const { createMovie, getMovies, deleteMovie } = require('../controllers/movies');
 
 router.get('/', validateUserId, asyncHandler(getMovies));
 

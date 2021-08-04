@@ -1,7 +1,7 @@
 const { PORT, MONGO_URI } = require('./utils/config/envConfig');
 const app = require('./app');
 const dbConnect = require('./utils/database/dbConnect');
-const { appStartFailedMessage } = require('./utils/responseMessages');
+const { appStartFailedMessage } = require('./utils/messages/responseMessages');
 
 const start = async () => {
   try {

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-const UnauthorizedError = require('../../../../utils/errors/401');
-const { unauthorizedErrorMessage } = require('../../messages/usersResponseMessages');
-const { JWT_SECRET } = require('../../../../utils/config/envConfig');
+const UnauthorizedError = require('../../../utils/errors/401');
+const { unauthorizedErrorMessage } = require('../../../utils/messages/usersResponseMessages');
+const { JWT_SECRET } = require('../../../utils/config/envConfig');
 
 const handleAuthError = () => {
   throw new UnauthorizedError(unauthorizedErrorMessage);

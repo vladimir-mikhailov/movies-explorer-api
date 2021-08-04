@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const asyncHandler = require('express-async-handler');
-const auth = require('../components/users/middlewares/auth/auth');
+const auth = require('../middlewares/user/auth/auth');
 const {
   validateLoginReq,
   validateRegisterReq,
-} = require('../components/users/middlewares/requestValidators');
-const usersRoutes = require('../components/users/routes');
-const moviesRoutes = require('../components/movies/routes');
+} = require('../middlewares/user/requestValidators');
+const usersRoutes = require('./users');
+const moviesRoutes = require('./movies');
 const notFoundHandler = require('../middlewares/notFoundHandler');
-const { createUser, login, logout } = require('../components/users/controllers');
+const { createUser, login, logout } = require('../controllers/users');
 
 router.post('/signin', validateLoginReq, asyncHandler(login));
 

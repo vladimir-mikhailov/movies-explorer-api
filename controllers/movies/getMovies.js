@@ -1,4 +1,4 @@
-const Movie = require('../models/movie');
+const Movie = require('../../models/movie');
 
 const getMovies = async (req, res) => {
   const movies = await Movie.find({ owner: req.user._id })
