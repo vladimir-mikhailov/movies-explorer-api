@@ -7,7 +7,8 @@ const { JWT_SECRET = 'dev-secret' } = process.env;
 const cookieOptions = {
   maxAge: 3600000 * 24 * 7,
   httpOnly: true,
-  sameSite: true,
+  sameSite: false,
+  // sameSite: true, todo включить обратно при деплое
 };
 
 const tokenOptions = { expiresIn: '7d' };
