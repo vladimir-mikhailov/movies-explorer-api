@@ -7,7 +7,7 @@ const {
 } = require('../middlewares/user/requestValidators');
 const usersRoutes = require('./users');
 const moviesRoutes = require('./movies');
-const notFoundHandler = require('../middlewares/notFoundHandler');
+const notFoundHandler = require('../middlewares/app/notFoundHandler');
 const { createUser, login, logout } = require('../controllers/users');
 
 router.post('/signin', validateLoginReq, asyncHandler(login));

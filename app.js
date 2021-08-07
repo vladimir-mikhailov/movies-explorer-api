@@ -5,7 +5,7 @@ const { errors: celebrateErrors } = require('celebrate');
 const router = require('./routes');
 const {
   rateLimiter, cors, requestLogger, errorLogger, errorHandler,
-} = require('./middlewares');
+} = require('./middlewares/app');
 
 const app = express();
 
