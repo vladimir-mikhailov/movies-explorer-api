@@ -1,5 +1,5 @@
 const express = require('express');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { errors: celebrateErrors } = require('celebrate');
 const router = require('./routes');
@@ -12,7 +12,7 @@ const app = express();
 app.use(requestLogger);
 
 app.use(rateLimiter);
-app.use(helmet());
+// app.use(helmet());
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
